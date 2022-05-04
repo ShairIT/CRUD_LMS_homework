@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns="http://www.w3.org/1999/html">
+    <title>Main page</title>
+</head>
+<style>
+    .navbar {
+        overflow: hidden;
+        background-color: #3399FF;
+        font-family: Arial;
+    }
+
+    /* Links inside the navbar */
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* The dropdown container */
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: black;
+        padding: 14px 16px;
+        background-color: inherit;
+    }
+
+    /* Add a forestgreen background color to navbar links on hover */
+    .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: forestgreen;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: whitesmoke;
+        width: 100%;
+        left: 0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Mega Menu header, if needed */
+    .dropdown-content .header {
+        background: steelblue;
+        padding: 16px;
+        color: black;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 18%;
+        padding: 8px;
+        background-color: whitesmoke;
+        height: 200px;
+    }
+
+    /* Style links inside the columns */
+    .column a {
+        float: none;
+        color: steelblue;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a background color on hover */
+    .column a:hover {
+        background-color: #000066;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+<body>
+<hr>
+<div class="navbar">
+    <a href="https://www.ieac.ru/">ИЭиК</a>
+    <a href="https://coursehunter.net/">Обучение</a>
+    <div class="dropdown">
+        <button class="dropbtn">Вся информация
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <div class="header">
+                <h2>Menu my project</h2>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <h3>Company</h3>
+                    <a href="/company/companies/company">Company page</a>
+                    <a href="/company/companies/add-company">Create company</a>
+                    <!--                    <a th:href="@{/company/companies/update-company/{id}(id=${company.id})}">Update company</a>-->
+                </div>
+                <div class="column">
+                    <h3>Course</h3>
+                    <a href="/course/courses">Course page</a>
+                    <a href="/course/courses/add-course">Create course</a>
+                    <!--                    <a href="/course/courses/update-course/{id}(id=${course.id})">Update course</a>-->
+                </div>
+                <div class="column">
+                    <h3>Teacher</h3>
+                    <a href="/teacher/teachers">Teacher page</a>
+                    <a href="/teacher/teachers/add-teacher">Create teacher</a>
+                </div>
+                <div class="column">
+                    <h3>Student</h3>
+                    <a href="/student/students">Student page</a>
+                    <a href="/student/students/add-student">Create student</a>
+                </div>
+                <div class="column">
+                    <h3>Group</h3>
+                    <a href="/group/groups">Group page</a>
+                    <a href="/group/groups/add-group">Create group</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+    <div class="mySlides fade">
+        <img src = "https://w-dog.ru/wallpapers/9/16/399332228390766/ssha-shtata-vajoming-grand-titon-nacionalnyj-park-gora-moran-ozero-dzhekson-priroda-leto-utro-les-otrazheniya.jpg" style="width: 100%">
+    </div>
+</div>
+
+</body>
+</html>

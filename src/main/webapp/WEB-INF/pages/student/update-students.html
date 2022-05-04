@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+</head>
+<body background="https://webpulse.imgsmail.ru/imgpreview?key=pic1170964242234487806&mb=pulse">
+<h1 style="background-color: #003399; text-align: center"><cite>Update student page</cite></h1>
+<hr>
+<div style="background: #3399FF; text-align: center">
+    <from th:action="@{/student/students/edit-student/{id}(id=${student.id})}"
+          th:object="${student}" th:method="patch">
+
+        <label for="Student firstname">Enter firstname</label>
+        <input type="text" th:field="*{firstname}" id="Student firstname" placeholder="Enter student firstname"/>
+        <br>
+        <label for="Student lastname">Enter lastname</label>
+        <input type="text" th:field="*{lastname}" id="Student lastname" placeholder="Enter student lastname"/>
+        <br>
+        <label for="email">Enter email</label>
+        <input type="text" th:field="*{email}" id="Email" placeholder="Enter student email"/>
+        <br>
+        <label for="Study format">Study format</label>
+        <input type="text" th:field="*{studyFormat}" id="Study format" placeholder="Enter study format"/>
+        <br>
+        <input type="submit" value="Update"/>
+    </from>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+package peaksoft.dao;
+
+import peaksoft.model.Group;
+
+import java.util.List;
+
+public interface GroupDao {
+
+    Group saveGroup(Group group);
+
+    List<Group> getAllGroups();
+
+    Group getByIdGroup(Long id);
+
+    void updateGroup(Group group, Long id);
+
+    void deleteGroup(Long id);
+
+
+
+
+}

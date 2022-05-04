@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add-company</title>
+</head>
+<body background="https://rus-arm.su/wp-content/uploads/2021/01/Mailru_Group.png">
+<h1 style="background-color: #003399; text-align: center"><em>Add company page</em></h1>
+<hr>
+<div style="background: #3399FF; text-align: center">
+<from th:action="@{/company/companies/save-company/{id}(id=${company.id})}"
+      th:mathod="post" th:object="${company}">
+    <label for="Company name">Company name</label>
+    <input type="text" th:field="*{companyName}" id="Company name" placeholder="Enter company name">
+    <br>
+    <label for="Company located country">Located country</label>
+    <input type="text" th:field="*{locatedCountry}" id="Company located country" placeholder="Enter located country company">
+    <br>
+    <input type="submit" value="Save company">
+</from>
+
+</div>
+
+</body>
+</html>

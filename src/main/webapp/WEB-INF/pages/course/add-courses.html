@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add course</title>
+</head>
+<body background="https://rus-arm.su/wp-content/uploads/2021/01/Mailru_Group.png">
+<h1 style="background-color: #003399; text-align: center"> <cite>Add course page</cite></h1>
+<hr>
+<div style="text-align: center; background: #3399FF">
+
+<from th:action="@{/course/courses/save-course(id=${course.id})}"
+      th:method="post" th:object="${course}">
+
+    <label for="Course name">Course name</label>
+    <input type="text"th:field="*{courseName}" id = "Course name" placeholder="Enter course name">
+    <br>
+    <label for = "Duration course">Duration course</label>
+    <input type ="text" th:field = "*{duration}" id="Duration course" placeholder="Enter duration course">
+    <br>
+    <input type = "submit" value = "Save course">
+ </from>
+</div>
+
+</body>
+</html>

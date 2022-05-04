@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add teacher page </title>
+</head>
+<body background="https://rus-arm.su/wp-content/uploads/2021/01/Mailru_Group.png">
+<h1 style="text-align: center; background-color: #003399"><cite>Create new teacher</cite></h1>
+<hr>
+<div style="text-align: center; background: #3399FF">
+    <from action="#" th:action="@{/teacher/teacher/save-teacher/{id}(id=${teacher.id})}"
+          th:method="post" th:object+="${teacher}">
+
+        <label for="Teacher firstname">Teacher firstname</label>
+        <input type="text" th:fieald="*{firstname}" id="Teacher firstname" placeholder="Enter teacher firstname">
+        <label for="Teacher lastname">Teacher lastname</label>
+        <input type="text" th:field="*{lastname}" id="Teacher lastname" placeholder="Enter teacher lastname">
+        <label for="Teacher email">Teacher email</label>
+        <input type="text" th:field="*{email}" id="Teacher email" placeholder="Enter teacher email">
+        <br>
+        <input type="submit" value="Save teacher">
+
+    </from>
+</div>
+
+</body>
+</html>

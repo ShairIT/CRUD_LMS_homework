@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Course page</title>
+</head>
+<style>
+    /* Place the navbar at the bottom of the page, and make it stick */
+    .navbar{
+        background: steelblue;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    /* Style the links inside the navigation bar */
+    .navbar a{
+        float: right;
+        display: block;
+        color: aqua;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    /* Change the color of links on hover */
+    .navbar a:hover{
+        background: aqua;
+        color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .navbar a.active{
+        background-color: #000066;
+        color: grey;
+    }
+
+</style>
+<body background="https://rus-arm.su/wp-content/uploads/2021/01/Mailru_Group.png">
+<h1 style="background-color: #003399; text-align: -webkit-center"><cite>Course page</cite></h1>
+<hr>
+<table border="#000099" style="background-color: #3399FF; width: 100%; border: 4px solid darkcyan">
+<tr>
+<th> Course id</th>
+    <th>Course name</th>
+    <th>Course duration</th>
+    <th>Action</th>
+    <th>Company</th>
+</tr>
+    <tr th:each="course:${courses}">
+        <td th:text = "${course.id}"></td>
+        <td th:text="${course.courseName}"></td>
+        <td th:text="${course.duration}"></td>
+        <td><a th:href="@{/course/courses/update-course/{id}(id=${courses.id})}">
+            <input type="submit" value="Update course">
+            <a th:href="@{/course/courses/delete-course/{id}(id=${course.id})}">
+                <input type="submit" value="Delete course">
+            </a>
+        </a>
+        </td>
+        <td><a th:href="@{/company/companies}"><button>Company</button></a></td>
+    </tr>
+</table>
+<br>
+<hr>
+<a href="/course/courses/add-course"><input type="submit" value="Create new course">
+    </a>
+<hr>
+<div class="navbar">
+    <a href="/company/companies" class="active">Company</a>
+    <a href="/teacher/teachers">Teacher</a>
+    <a href="/student/students">Student</a>
+    <a href="/group/groups">Group</a>
+</div>
+
+</body>
+</html>

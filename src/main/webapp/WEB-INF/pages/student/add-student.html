@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add student</title>
+</head>
+<body background="https://webpulse.imgsmail.ru/imgpreview?key=pic1170964242234487806&mb=pulse">
+<h1 style="text-align: center; background-color: #003399"><cite>Create student page</cite></h1>
+<hr>
+<div style="text-align: center; background: #3399FF">
+    <from th:action="@{/student/students/save-student/{id}(id=${student.id})}"
+          th:method="post" th:object="${student}">
+
+        <label for="Name">Student first name</label>
+        <input type="text" th:field="*{firstName}" id="Name" placeholder="Enter student name">
+        <br>
+        <label for="Surname">Student lastname</label>
+        <input type="text" th:field="*{lastname}" id="Surname" placeholder="Enter student surname">
+        <br>
+        <label for="Email">Student email</label>
+        <input type="text" th:field="*{email}" id="Email" placeholder="Enter student email">
+        <br>
+        <label for="Format">Study format</label>
+        <input type="text" th:filed="*{studyFormat}" id="Format" placeholder="Enter study format">
+        <br>
+        <input type="submit" value="Save student">
+    </from>
+</div>
+
+</body>
+</html>

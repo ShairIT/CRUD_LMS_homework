@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies page</title>
+</head>
+<style>
+    .navbar{
+        background-color: grey;
+        overflow: scroll;
+        position: fixed;
+        bottom: 0;
+        weight:100%
+    }
+
+    .navbar a {
+        float: right;
+        display: block;
+        color: black;
+        text-blink: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .navbar a:hover {
+        background-color: aquamarine;
+        color: black;
+    }
+
+    .navbar .icon {
+        display: none;
+    }
+</style>
+<body background="https://rus-arm.su/wp-content/uploads/2021/01/Mailru_Group.png">
+<h1 style="background-color: #003399; text-align: center"><em>Company page</em></h1>
+<br>
+<table border="Black" style="background: #3399FF; text-align: center; width: 100%;
+       border: 4px solid blue">
+<tr>
+    <th>Company id</th>
+    <th>Company name</th>
+    <th>Located country</th>
+    <th>Action</th>
+    </tr>
+    <!--/*@thymesVar id="companies" type="mail.ru"*/-->
+    <tr th:each = "company:${companies}">
+        <td th:text = "${company.id}"></td>
+        <td th:text = "${company.companyName}"></td>
+        <td th:text = "${company.LocatedCountry}"></td>
+    <td><a th:href="@{/company/companies/update-company/{id}(id=${company.id})}">
+        <input type = "submit" value ="Update company">
+    </a>
+    <a th:href="@{/company/companies/delete-company/{id}(id=${company.id})}">
+        <input type="submit" value = "Delete company">
+    </a>
+    </td>
+    </tr>
+</table>
+
+<br>
+<a href="/company/companies/add-company"><input type="submit" value="Create new company">
+</a>
+<hr>
+<br>
+<div class = "navbar" id="myNavbar">
+<a href="/course/courses/">Course</a>
+    <a href="/teacher/teachers/">Teacher</a>
+    <a href="/student/students/">Student</a>
+    <a href="/group/groups/">Group</a>
+    <a href ="javascript:void(0);" class="icon" onclick="myFunction()">&#1099</a>
+</div>
+</body>
+</html>

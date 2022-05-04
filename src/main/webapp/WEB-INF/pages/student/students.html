@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student page</title>
+</head>
+<body background="https://webpulse.imgsmail.ru/imgpreview?key=pic1170964242234487806&mb=pulse">
+<h1 style="background-color: #003399; text-align: center"><cite>Students page</cite></h1>
+<hr>
+<hr>
+<hr>
+<table border="blue" style="text-align: center; width: 100%;
+       background-color: cornflowerblue; border: 6px solid mediumaquamarine">
+<tr>
+    <th>Student id</th>
+    <th>Student firstname</th>
+    <th>Student lastname</th>
+    <th>Student email</th>
+    <th>Study format</th>
+    <th>Action</th>
+    <th>Group</th>
+</tr>
+    <tbody th:each="student:${students}">
+    <tr>
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.firstname}"></td>
+        <td th:text="${student.lastname}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.studyFormat}"></td>
+
+        <td><a th:href="@{/student/students/update-student/{id}(id=${student.id})}">
+            <input type="submit" value="Update"></a>
+            <a th:href="@{/student/students/delete-student/{id}(id=${student.id})}">
+                <input type="submit" value="Delete"></a>
+        </td>
+        <td><a th:href="@{/group/groups}"><button>Group</button></a></td>
+    </tr>
+
+    </tbody>
+</table>
+<br>
+<hr>
+<<a href="/student/students/add-student"><input type="submit" value="Create new student"></a>
+<hr>
+<style>
+    .bg-img{
+
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        /* Needed to position the navbar */
+        position: relative;
+
+    }
+
+    /* Position the navbar container inside the image */
+    .container {
+        position: absolute;
+        margin: 20px;
+        width: auto;
+    }
+
+    /* The navbar */
+    .topnav {
+        overflow: auto;
+        background-color: #333;
+    }
+
+    /* Navbar links */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: blue;
+    }
+</style>
+<div class="bg-img">
+    <div class="container">
+        <div class="topnav">
+            <a href="/company/companies">Company</a>
+            <a href="/course/courses">Course</a>
+            <a href="/teacher/teachers">Teacher</a>
+            <a href="/student/students">Student</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
